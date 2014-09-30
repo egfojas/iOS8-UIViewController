@@ -8,6 +8,8 @@
 
 #import "HomeViewController.h"
 #import "SecondViewController.h"
+#import "CustomPresentationController.h"
+
 
 @interface HomeViewController ()
 
@@ -22,6 +24,8 @@
     self = [super init];
     if (self) {
         _secondViewController = [[SecondViewController alloc] init];
+        [_secondViewController setModalPresentationStyle:UIModalPresentationCustom];
+        [_secondViewController setTransitioningDelegate:_secondViewController];
     }
     return self;
 }

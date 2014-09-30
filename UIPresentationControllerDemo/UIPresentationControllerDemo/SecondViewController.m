@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "CustomPresentationController.h"
 
 @interface SecondViewController ()
 
@@ -40,14 +41,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source NS_AVAILABLE_IOS(8_0)
+{
+    if (presented == self) {
+        return [[CustomPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
+    }
+    
+    return nil;
 }
-*/
 
 @end
