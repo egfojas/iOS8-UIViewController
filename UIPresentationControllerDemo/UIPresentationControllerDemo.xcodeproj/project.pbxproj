@@ -14,6 +14,8 @@
 		C9045B4619DA866100407A2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9045B4419DA866100407A2E /* LaunchScreen.xib */; };
 		C9045B5219DA866100407A2E /* UIPresentationControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9045B5119DA866100407A2E /* UIPresentationControllerDemoTests.m */; };
 		C9045B5D19DA8A6700407A2E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9045B5C19DA8A6600407A2E /* SecondViewController.m */; };
+		C9AF414119DA8F7E001D16D7 /* CustomPresentationAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AF414019DA8F7E001D16D7 /* CustomPresentationAnimationController.m */; };
+		C9AF414419DA8F9A001D16D7 /* CustomPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AF414319DA8F9A001D16D7 /* CustomPresentationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,10 @@
 		C9045B5119DA866100407A2E /* UIPresentationControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIPresentationControllerDemoTests.m; sourceTree = "<group>"; };
 		C9045B5B19DA8A6500407A2E /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		C9045B5C19DA8A6600407A2E /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		C9AF413F19DA8F7E001D16D7 /* CustomPresentationAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPresentationAnimationController.h; sourceTree = "<group>"; };
+		C9AF414019DA8F7E001D16D7 /* CustomPresentationAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPresentationAnimationController.m; sourceTree = "<group>"; };
+		C9AF414219DA8F9A001D16D7 /* CustomPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPresentationController.h; sourceTree = "<group>"; };
+		C9AF414319DA8F9A001D16D7 /* CustomPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPresentationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 				C9045B3D19DA866100407A2E /* HomeViewController.m */,
 				C9045B5B19DA8A6500407A2E /* SecondViewController.h */,
 				C9045B5C19DA8A6600407A2E /* SecondViewController.m */,
+				C9AF414219DA8F9A001D16D7 /* CustomPresentationController.h */,
+				C9AF414319DA8F9A001D16D7 /* CustomPresentationController.m */,
+				C9AF413F19DA8F7E001D16D7 /* CustomPresentationAnimationController.h */,
+				C9AF414019DA8F7E001D16D7 /* CustomPresentationAnimationController.m */,
 				C9045B4219DA866100407A2E /* Images.xcassets */,
 				C9045B4419DA866100407A2E /* LaunchScreen.xib */,
 				C9045B3519DA866000407A2E /* Supporting Files */,
@@ -223,6 +233,8 @@
 				C9045B3E19DA866100407A2E /* HomeViewController.m in Sources */,
 				C9045B5D19DA8A6700407A2E /* SecondViewController.m in Sources */,
 				C9045B3B19DA866000407A2E /* AppDelegate.m in Sources */,
+				C9AF414119DA8F7E001D16D7 /* CustomPresentationAnimationController.m in Sources */,
+				C9AF414419DA8F9A001D16D7 /* CustomPresentationController.m in Sources */,
 				C9045B3819DA866000407A2E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +418,7 @@
 				C9045B5719DA866100407A2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9045B5819DA866100407A2E /* Build configuration list for PBXNativeTarget "UIPresentationControllerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +427,7 @@
 				C9045B5A19DA866100407A2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
