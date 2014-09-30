@@ -14,6 +14,22 @@
 
 @implementation SecondViewController
 
+- (void)loadView {
+    self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.view.backgroundColor = [UIColor blueColor];
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 300, 30)];
+    [backButton setTitle:@"Back" forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(didTapBackButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:backButton];
+}
+
+- (void)didTapBackButton:(id)sender
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

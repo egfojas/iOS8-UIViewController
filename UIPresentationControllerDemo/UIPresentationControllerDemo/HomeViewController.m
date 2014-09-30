@@ -29,16 +29,16 @@
 - (void)loadView
 {
     self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor lightGrayColor];
     
     UIButton *presentButton = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 200, 30)];
+    [presentButton setTitle:@"Present 2nd Screen" forState:UIControlStateNormal];
     [presentButton addTarget:self action:@selector(didTapPresentButton:) forControlEvents:UIControlEventTouchUpInside];
 
-    UIButton *presentModalButton = [[UIButton alloc] initWithFrame:CGRectMake(50, 90, 200, 30)];
-    [presentButton addTarget:self action:@selector(didTapPresentButton:) forControlEvents:UIControlEventTouchUpInside];
+//    UIButton *presentModalButton = [[UIButton alloc] initWithFrame:CGRectMake(50, 90, 200, 30)];
+//    [presentButton addTarget:self action:@selector(didTapPresentButton:) forControlEvents:UIControlEventTouchUpInside];x`
     
     [self.view addSubview:presentButton];
-    [self.view addSubview:presentModalButton];
 }
 
 - (void)didTapPresentButton:(id)sender
