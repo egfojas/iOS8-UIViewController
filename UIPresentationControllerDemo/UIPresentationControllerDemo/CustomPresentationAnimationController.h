@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface CustomPresentationAnimationController : NSObject
-
+@interface CustomPresentationAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
+- (instancetype)initWithIsPresenting:(BOOL)isPresenting;
 @end
