@@ -27,17 +27,17 @@
     
     UIButton *alertStyleButton = [[UIButton alloc] initWithFrame:CGRectMake(35, 100, 300, 30)];
     [alertStyleButton setTitle:@"Alert Style UIAlert" forState:UIControlStateNormal];
-    [alertStyleButton addTarget:self action:@selector(didTapAlertStyleButton) forControlEvents:UIControlEventTouchUpInside];
+    [alertStyleButton addTarget:self action:@selector(didTapAlertStyleButton:) forControlEvents:UIControlEventTouchUpInside];
     alertStyleButton.backgroundColor = [UIColor lightGrayColor];
     
     UIButton *actionSheetStyleButton = [[UIButton alloc] initWithFrame:CGRectMake(35, 140, 300, 30)];
     [actionSheetStyleButton setTitle:@"ActionSheet Style UIAlert" forState:UIControlStateNormal];
-    [actionSheetStyleButton addTarget:self action:@selector(didTapActionSheetStyleButton) forControlEvents:UIControlEventTouchUpInside];
+    [actionSheetStyleButton addTarget:self action:@selector(didTapActionSheetStyleButton:) forControlEvents:UIControlEventTouchUpInside];
     actionSheetStyleButton.backgroundColor = [UIColor lightGrayColor];
     
     UIButton *alertWithTextFieldButton = [[UIButton alloc] initWithFrame:CGRectMake(35, 180, 300, 30)];
     [alertWithTextFieldButton setTitle:@"UIAlert with UITextField" forState:UIControlStateNormal];
-    [alertWithTextFieldButton addTarget:self action:@selector(didTapAlertWithTextFieldButton) forControlEvents:UIControlEventTouchUpInside];
+    [alertWithTextFieldButton addTarget:self action:@selector(didTapAlertWithTextFieldButton:) forControlEvents:UIControlEventTouchUpInside];
     alertWithTextFieldButton.backgroundColor = [UIColor lightGrayColor];
     
     [self.view addSubview:alertStyleButton];
@@ -45,7 +45,7 @@
     [self.view addSubview:alertWithTextFieldButton];
 }
 
-- (void)didTapAlertStyleButton
+- (void)didTapAlertStyleButton:(id)sender
 {
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@"UIAlert"
@@ -83,7 +83,7 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)didTapActionSheetStyleButton
+- (void)didTapActionSheetStyleButton:(id)sender
 {
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@"UIAlert"
@@ -118,10 +118,19 @@
     [alertController addAction:okAction];
     [alertController addAction:resetAction];
     
+    UIPopoverPresentationController *popover = alertController.popoverPresentationController;
+    if (popover)
+    {
+        popover.sourceView = sender;
+        CGRect sourceRect = ([sender isKindOfClass:[UIView class]]) ? ((UIView *)sender).bounds : CGRectZero;
+        popover.sourceRect = sourceRect;
+        popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    }
+    
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)didTapAlertWithTextFieldButton
+- (void)didTapAlertWithTextFieldButton:(id)sender
 {
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:@"UIAlert"
@@ -141,11 +150,11 @@
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction *action)
                                {
-                                   UITextField *login = alertController.textFields.firstObject;
-                                   UITextField *password = alertController.textFields.lastObject;
-                                   NSString *username = login.text;
-                                   NSString *passworkd = password.text;
-                                   NSLog(@"OK action");
+                                   UITextField *loginField = alertController.textFields.firstObject;
+                                   UITextField *passwordField = alertController.textFields.lastObject;
+                                   NSString *username = loginField.text;
+                                   NSString *password = passwordField.text;
+                                   NSLog(@"OK action, %@ - %@", username, password);
                                }];
 
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField)
