@@ -54,7 +54,6 @@
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
     if(presented == self) {
-        return nil;
         return [[CustomPresentationAnimationController alloc] initWithIsPresenting:YES];
     }
     return nil;
@@ -63,7 +62,6 @@
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
 {
     if(dismissed == self) {
-        return nil;
         return [[CustomPresentationAnimationController alloc] initWithIsPresenting:NO];
     }
     return nil;

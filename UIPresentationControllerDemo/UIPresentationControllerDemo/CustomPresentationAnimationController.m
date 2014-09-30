@@ -21,6 +21,7 @@
     self = [super init];
     if (self) {
         self.isPresenting = isPresenting;
+        self.duration = 0.5;
     }
     return self;
 }
@@ -48,8 +49,8 @@
     UIView *containerView = [transitionContext containerView];
     
     CGRect frame = [transitionContext finalFrameForViewController:presentedController];
-    presentedControllerView.center = CGPointMake(presentedControllerView.center.x, presentedControllerView.center.y - containerView.bounds.size.height);
     presentedControllerView.frame = frame;
+    presentedControllerView.center = CGPointMake(presentedControllerView.center.x, presentedControllerView.center.y - containerView.bounds.size.height);
     [containerView addSubview:presentedControllerView];
     
     [UIView animateWithDuration:self.duration delay:0.0 usingSpringWithDamping:1.0 initialSpringVelocity:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
